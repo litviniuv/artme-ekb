@@ -139,7 +139,9 @@
       else if(e.key==="End"){ e.preventDefault(); go(n-1); }
     });
     var t; track.addEventListener("scroll", function(){ clearTimeout(t); t=setTimeout(update,60); }, {passive:true});
-    window.addEventListener("resize", update); update();
+    var pend=false; function soon(){ if(!pend){ pend=true; requestAnimationFrame(function(){ pend=false; update(); }); } }
+    window.addEventListener("resize", soon); window.addEventListener("scroll", soon, {passive:true}); window.addEventListener("load", soon);
+    car.addEventListener("focusin", soon); car.addEventListener("pointerenter", soon); update();
   });
 
   /* switcher moves away when it would cover a control */
