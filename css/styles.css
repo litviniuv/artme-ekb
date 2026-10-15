@@ -134,3 +134,10 @@ section{padding:56px 0}
 .util{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
 .util main{flex:1;display:flex;align-items:center}
 .util main .wrap{padding-top:48px;padding-bottom:48px}
+/* «Пример работы» label (law-note Y2) */
+.gal__item,.car__slide,.lq-card{position:relative}
+.ex{position:absolute;left:10px;bottom:10px;z-index:2;margin:0;padding:3px 9px;border-radius:999px;background:rgba(23,24,28,.72);color:#fff;font:600 12px/1.4 var(--f-body);pointer-events:none}
+/* switcher in flow above the footer: never covers content (QA polish) */
+.switch{position:static;width:max-content;margin:8px auto 24px;transform:none}
+.switch.away{transform:none;opacity:1;pointer-events:auto}
+.footer{padding-bottom:28px}

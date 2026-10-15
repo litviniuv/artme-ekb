@@ -144,21 +144,4 @@
     car.addEventListener("focusin", soon); car.addEventListener("pointerenter", soon); update();
   });
 
-  /* switcher moves away when it would cover a control */
-  var sw=d.querySelector(".switch");
-  if(sw){
-    var tick=false;
-    function check(){
-      tick=false; if(open){ return; }
-      var r=sw.getBoundingClientRect(); if(sw.classList.contains("away")) r={left:12,right:12+r.width,top:window.innerHeight-12-r.height,bottom:window.innerHeight-12};
-      var hit=false;
-      d.querySelectorAll("main a, main button, main iframe, .footer a, [data-car] .car__ctrl").forEach(function(el){
-        if(hit) return; var b=el.getBoundingClientRect();
-        if(b.width && b.right>r.left-6 && b.left<r.right+6 && b.bottom>r.top-6 && b.top<r.bottom+6) hit=true;
-      });
-      sw.classList.toggle("away", hit);
-    }
-    function req(){ if(!tick){ tick=true; requestAnimationFrame(check); } }
-    window.addEventListener("scroll", req, {passive:true}); window.addEventListener("resize", req); window.addEventListener("load", req); req();
-  }
 })();
