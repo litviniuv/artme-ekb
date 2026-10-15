@@ -1,0 +1,56 @@
+/* v2 · exp_prompts #3 «Work rises from lacquer»: drawn wine-to-powder lacquer canvas behind the whole page */
+.v2{--bg:#3a0c22;--ink:#fbeff2;--muted:#ecd3da;--line:rgba(255,230,236,.22);--card:rgba(48,8,26,.58);--acc:#f4d6dc;--acc-ink:#3a0c22;--hdr-bg:#2c0819;--hdr-ink:#fbeff2;--strip-bg:#16040c;--strip-ink:#fbeff2}
+.v2 body,.v2{background:#3a0c22}
+.lacquer{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(120% 60% at 20% 8%,rgba(120,18,58,.85),transparent 60%),
+   radial-gradient(90% 50% at 85% 30%,rgba(92,14,46,.9),transparent 65%),
+   radial-gradient(140% 70% at 50% 120%,rgba(236,196,200,.95),transparent 62%),
+   linear-gradient(180deg,#2a0716 0%,#4a1030 38%,#7a3150 66%,#c68e9a 88%,#ecd0cf 100%)}
+.lacquer::after{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 18% at 50% 50%,rgba(255,255,255,.10),transparent 70%);animation:lq-sheen 14s ease-in-out infinite alternate}
+@keyframes lq-sheen{from{transform:translate(-18%,-6%)}to{transform:translate(18%,10%)}}
+.v2 .hdr{border-bottom-color:rgba(255,230,236,.16)}
+.v2 .eyebrow{color:#f6c9d3}
+.v2 .btn--ghost{color:#fbeff2}
+.hero2{padding:28px 0 56px;min-height:calc(100svh - var(--chrome-h));display:flex;align-items:center}
+.hero2__in{display:grid;gap:28px;align-items:center}
+.hero2__text{position:relative;z-index:2}
+.hero2__line{font-size:17px;color:var(--muted);max-width:46ch}
+.hero2__stage{position:relative;justify-self:center;width:min(68vw,300px);perspective:900px}
+.lq-card{position:relative;transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
+.lq-card__img{position:relative;aspect-ratio:3/4;border-radius:18px 18px 40% 40%/18px 18px 9% 9%;overflow:hidden;box-shadow:0 30px 60px rgba(20,0,10,.45);-webkit-mask-image:linear-gradient(180deg,#000 82%,rgba(0,0,0,.25) 100%);mask-image:linear-gradient(180deg,#000 82%,rgba(0,0,0,.25) 100%)}
+.lq-card__img img{width:100%;height:100%;object-fit:cover}
+.lq-card__shine{position:absolute;inset:0;background:radial-gradient(40% 30% at var(--hx,30%) var(--hy,20%),rgba(255,255,255,.35),transparent 70%);mix-blend-mode:soft-light;pointer-events:none}
+.lq-ring{position:absolute;left:var(--rx,50%);top:var(--ry,50%);width:20px;height:20px;margin:-10px 0 0 -10px;border:2px solid rgba(255,240,244,.8);border-radius:50%;opacity:0;pointer-events:none}
+.lq-ring.go{animation:lq-ring .7s ease-out}
+@keyframes lq-ring{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(9)}}
+.lq-reflect{height:70px;overflow:hidden;margin-top:6px;opacity:.28;filter:blur(5px);transform:scaleY(-1);-webkit-mask-image:linear-gradient(0deg,#000,transparent);mask-image:linear-gradient(0deg,#000,transparent);border-radius:40%/20%}
+.lq-reflect img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:bottom}
+.hero2__cap{margin:6px 0 0;text-align:center;font:italic 500 20px/1.2 var(--f-disp);color:#fbeff2}
+.js .lq-rise{opacity:0;transform:translateY(60px)}
+.lq-card,.lq-reflect{transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.8,.2,1)}
+@media (min-width:960px){.hero2__in{grid-template-columns:1.1fr .9fr;gap:56px}.hero2__stage{width:340px;justify-self:end;margin-right:24px}.hero2__cap{text-align:right}}
+/* sections sit on the lacquer: text in translucent lacquer drops, no full-page plaque */
+.v2 .about__in,.v2 .services .wrap,.v2 .works .wrap,.v2 .reviews .wrap,.v2 .contacts-s .wrap{position:relative}
+.v2 .about__in,.v2 .contacts-s .wrap,.v2 .services .wrap,.v2 .reviews .wrap,.v2 .works .wrap{background:rgba(40,6,22,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,230,236,.14);border-radius:28px;padding-top:32px;padding-bottom:32px;max-width:calc(var(--wrap) - 0px);width:calc(100% - 24px)}
+@media (min-width:960px){.v2 .about__in,.v2 .contacts-s .wrap,.v2 .services .wrap,.v2 .reviews .wrap,.v2 .works .wrap{padding:48px 48px}}
+.v2 section:not(.hero2){padding:20px 0}
+@media (min-width:960px){.v2 section:not(.hero2){padding:32px 0}.v2 .about__in{display:grid;grid-template-columns:1fr 1.2fr;column-gap:48px}.v2 .about__in .eyebrow,.v2 .about__in h2{grid-column:1}.v2 .about__text{grid-column:2;grid-row:1/span 2}}
+.v2 .svc__card,.v2 .rev__card{background:rgba(255,235,240,.07)}
+.v2 .rev__sign b{color:#fff}
+.v2 .rating a{color:#fff}
+.v2 .rev__cta{margin:24px 0 0}
+.v2 .map{background:rgba(255,235,240,.06)}
+/* carousel slides: 3:4 lacquer cards with soft edge and weak reflection */
+.v2 .car__slide{overflow:visible;border-radius:16px;aspect-ratio:auto}
+.v2 .car__slide picture{display:block;aspect-ratio:3/4;border-radius:16px 16px 34% 34%/16px 16px 8% 8%;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 84%,rgba(0,0,0,.3));mask-image:linear-gradient(180deg,#000 84%,rgba(0,0,0,.3));box-shadow:0 20px 40px rgba(20,0,10,.4)}
+.v2 .car__slide::after{content:"";display:block;height:28px;margin-top:4px;background:inherit;border-radius:50%;background:radial-gradient(50% 50% at 50% 0,rgba(255,230,236,.22),transparent 70%)}
+.js .v2 .car-wrap .car__slide picture{transform:translateY(40px);opacity:0;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s}
+.js .v2 .car-wrap.is-in .car__slide picture{transform:none;opacity:1}
+.js .v2 .car-wrap.is-in .car__slide:nth-child(2) picture{transition-delay:.1s}
+.js .v2 .car-wrap.is-in .car__slide:nth-child(3) picture{transition-delay:.2s}
+.js .v2 .car-wrap.is-in .car__slide:nth-child(4) picture{transition-delay:.3s}
+.v2 .car__btn{color:#fbeff2}
+.v2 .footer{background:rgba(22,4,12,.92);color:#fbeff2}
+.v2 .switch{background:rgba(22,4,12,.9)}
+@media (prefers-reduced-motion:reduce){.lacquer::after{animation:none}.js .lq-rise{opacity:1;transform:none}}
